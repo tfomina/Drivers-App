@@ -1,0 +1,30 @@
+{
+  "name": "drivers-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tfomina/Drivers-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tfomina/Drivers-App/issues"
+  },
+  "homepage": "https://github.com/tfomina/Drivers-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^8.3.2",
+    "mongoose": "^5.12.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
