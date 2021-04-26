@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== "test") {
   mongoose.connect("mongodb://localhost/drivers", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   });
 }
 

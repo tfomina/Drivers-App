@@ -5,6 +5,8 @@ module.exports = {
     res.send({ hi: "there" });
   },
 
+  index(req, res, next) {},
+
   create(req, res, next) {
     const driverProps = req.body;
 
