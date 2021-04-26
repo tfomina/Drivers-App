@@ -22,4 +22,14 @@ module.exports = {
       .then((driver) => res.send(driver))
       .catch(next);
   },
+
+  delete(req, res, next) {
+    const { id } = req.params;
+
+    Driver.findByIdAndDelete(id)
+      .then((driver) => {
+        res.status(204).send(driver);
+      })
+      .catch(next);
+  },
 };

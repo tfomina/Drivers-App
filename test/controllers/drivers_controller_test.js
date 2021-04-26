@@ -21,14 +21,29 @@ describe("Drivers controller", () => {
   });
 
   it("PUT to /api/drivers/id edits an existing driver", (done) => {
-    const driver = new Driver({ email: "driver@text.com", driving: false });
+    const driver = new Driver({ email: "driver@test.com", driving: false });
     driver.save().then(() => {
       request(app)
         .put(`/api/drivers/${driver._id}`)
         .send({ driving: true })
         .end(() => {
-          Driver.findOne({ email: "driver@text.com" }).then((updatedDiver) => {
+          Driver.findOne({ email: "driver@test.com" }).then((updatedDiver) => {
             assert(updatedDiver.driving === true);
+            done();
+          });
+        });
+    });
+  });
+
+  it("DELETE to /api/drivers can delete a  driver", (done) => {
+    const driver = new Driver({ email: "delete_test@test.com" });
+
+    driver.save().then(() => {
+      request(app)
+        .delete(`/api/drivers/${driver._id}`)
+        .end(() => {
+          Driver.findOne({ email: "delete_test@test.com" }).then((driver) => {
+            assert(driver === null);
             done();
           });
         });
